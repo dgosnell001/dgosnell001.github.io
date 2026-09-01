@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Vacation Planner</title>
+    </head>
+    <body>
+        <h1>Vacation Planner</h1>
+        <p>Use the forms below to help plan your next vacation.</p>
+
+        <h2>GET form</h2>
+        <form method="get" action="https://cs.converse.edu/CSC235/formecho.php">
+            <label for="get-name">What is your name?</label>
+            <input type="text" id="get-name" name="name"><br>
+
+            <label for="get-destination">Where would you most like to travel?</label>
+            <select id="get-destination" name="destination">
+                <option value="No destination selected">&mdash;Please select an answer&mdash;</option>
+                <option>Beach</option>
+                <option>Mountains</option>
+                <option>City</option>
+                <option>National Park</option>
+            </select><br>
+
+            <label for="get-travelers">How many people will be traveling?</label>
+            <input type="number" id="get-travelers" name="travelers" min="1" max="10"><br>
+
+            <label for="get-date">When would you like to leave?</label>
+            <input type="date" id="get-date" name="departure-date" value="2026-09-01"><br>
+
+            <label for="get-pswd">Vacation planning password:</label>
+            <input type="password" id="get-pswd" name="password"><br>
+
+            <p>What type of transportation would you prefer?<br>
+                <input type="radio" id="get-car" name="transportation" value="Car">
+                <label for="get-car">Car</label><br>
+
+                <input type="radio" id="get-plane" name="transportation" value="Plane">
+                <label for="get-plane">Plane</label><br>
+
+                <input type="radio" id="get-train" name="transportation" value="Train">
+                <label for="get-train">Train</label><br>
+
+                <input type="radio" id="get-cruise" name="transportation" value="Cruise">
+                <label for="get-cruise">Cruise</label><br>
+            </p>
+
+            <p>Which activities would you enjoy? Check all that apply.<br>
+                <input type="checkbox" id="get-swimming" name="swimming">
+                <label for="get-swimming">Swimming</label><br>
+
+                <input type="checkbox" id="get-hiking" name="hiking">
+                <label for="get-hiking">Hiking</label><br>
+
+                <input type="checkbox" id="get-shopping" name="shopping">
+                <label for="get-shopping">Shopping</label><br>
+
+                <input type="checkbox" id="get-sightseeing" name="sightseeing">
+                <label for="get-sightseeing">Sightseeing</label><br>
+            </p>
+
+            <input type="hidden" name="form-type" value="Vacation Planner GET Form">
+
+            <label for="get-comments">Tell us about your ideal vacation:</label><br>
+            <textarea name="comments" id="get-comments"></textarea><br>
+
+            <input type="submit"><input type="reset">
+        </form>
+
+        <h2>POST form</h2>
+        <form method="post" action="https://cs.converse.edu/CSC235/formecho.php">
+            <label for="post-location">What is your dream vacation location?</label>
+            <input type="text" id="post-location" name="dream-location"><br>
+
+            <label for="post-season">What season would you prefer to travel?</label>
+            <select id="post-season" name="season">
+                <option value="No season selected">&mdash;Please select an answer&mdash;</option>
+                <option>Spring</option>
+                <option>Summer</option>
+                <option>Fall</option>
+                <option>Winter</option>
+            </select><br>
+
+            <label for="post-relaxation">How important is relaxation on your vacation?</label>
+            <input type="range" id="post-relaxation" name="relaxation"
+                   min="0" max="10" step="1" list="tickmarks"><br>
+
+            <datalist id="tickmarks">
+                <option value="0" label="0"></option>
+                <option value="1" label="1"></option>
+                <option value="2" label="2"></option>
+                <option value="3" label="3"></option>
+                <option value="4" label="4"></option>
+                <option value="5" label="5"></option>
+                <option value="6" label="6"></option>
+                <option value="7" label="7"></option>
+                <option value="8" label="8"></option>
+                <option value="9" label="9"></option>
+                <option value="10" label="10"></option>
+            </datalist>
+
+            <label for="post-date">When would you like to return?</label>
+            <input type="date" id="post-date" name="return-date" value="2026-09-08"><br>
+
+            <label for="post-pswd">Vacation planning password:</label>
+            <input type="password" id="post-pswd" name="password"><br>
+
+            <p>How long would you like your vacation to last?<br>
+                <input type="radio" id="post-weekend" name="length" value="Weekend">
+                <label for="post-weekend">Weekend</label><br>
+
+                <input type="radio" id="post-week" name="length" value="One week">
+                <label for="post-week">One week</label><br>
+
+                <input type="radio" id="post-two-weeks" name="length" value="Two weeks">
+                <label for="post-two-weeks">Two weeks</label><br>
+
+                <input type="radio" id="post-longer" name="length" value="More than two weeks">
+                <label for="post-longer">More than two weeks</label><br>
+            </p>
+
+            <p>What would you like your vacation destination to include? Check all that apply.<br>
+                <input type="checkbox" id="post-restaurants" name="restaurants">
+                <label for="post-restaurants">Restaurants</label><br>
+
+                <input type="checkbox" id="post-museums" name="museums">
+                <label for="post-museums">Museums</label><br>
+
+                <input type="checkbox" id="post-outdoor" name="outdoor-activities">
+                <label for="post-outdoor">Outdoor activities</label><br>
+
+                <input type="checkbox" id="post-entertainment" name="entertainment">
+                <label for="post-entertainment">Entertainment</label><br>
+            </p>
+
+            <input type="hidden" name="form-type" value="Vacation Planner POST Form">
+
+            <label for="post-comments">Additional vacation comments:</label><br>
+            <textarea name="comments" id="post-comments"></textarea><br>
+
+            <input type="submit"><input type="reset">
+        </form>
+    </body>
+</html>
