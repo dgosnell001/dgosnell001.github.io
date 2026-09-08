@@ -1,0 +1,31 @@
+/* Tag selector */
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: whitesmoke;
+    color: rgb(64, 64, 64);
+}
+
+/* ID selector */
+h1#mainTitle {
+    color: slateblue;
+    font-size: 200%;
+    text-align: center;
+}
+
+/* Tag selector */
+h2 {
+    color: firebrick;
+    font-size: 150%;
+    font-style: italic;
+}
+
+/* Tag selector */
+p {
+    font-size: 110%;
+    line-height: 1.5;
+}
+
+/* Pseudoclass selector */
+p:hover {
+    background-color: linen;
+}
