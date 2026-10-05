@@ -73,3 +73,223 @@ input[type="radio"]:first-of-type + label { font-size: 150%; }
 input[type="radio"]:nth-of-type(2) + label { font-size: 125%; }
 input[type="radio"]:nth-of-type(3) + label { font-size: 100%; }
 input[type="radio"]:nth-of-type(4) + label { font-size: 75%; }
+
+/* line height */
+.doublespace { line-height: 200%; }
+
+/* Vertical align */
+img.building { width: 100%; }
+tr:nth-of-type(4) > td:nth-of-type(3) { vertical-align: bottom; }
+tr:nth-of-type(4) > td:nth-of-type(4) { vertical-align: top; }
+
+/* Borders */
+.pix_table td { border: thin solid; }
+.pix_table th { border-width: thin medium thick 2px; 
+     border-style: dashed dotted double solid; 
+     border-color: green blue black red; 
+     border-radius: 5% / 30%; }
+/* Slash allows specifying horizontal and vertical radii separately */
+.pix_table tr:first-of-type > th { border-radius: 7px;  }
+
+/* Padding */
+tr:nth-of-type(3) > th:nth-of-type(2) { padding: 0.5em; }
+tr:nth-of-type(3) > th:nth-of-type(3) { padding: 0em 1em; }
+ol.bordered li { border: thin solid black; }
+ol.margined ol > li { margin: 0.5em; background-color: tan; }
+
+/* Margins */
+
+table {
+  margin: 3ex 0 0 0;
+}
+
+/* Table stuff */
+.plain_table {
+  border-collapse: collapse;
+  margin: 0 0 5ex 0;
+}
+
+caption {
+  font-weight: bold;
+  font-size: larger;
+}
+
+.plain_table th, .plain_table td {
+  /*border: thin solid;*/
+  padding: 0.2ex 0.5em;
+}
+
+.plain_table > tbody > tr > td:nth-last-of-type(2) {
+  text-align: center;
+}
+
+.plain_table > tbody > tr:nth-of-type(even) > td {
+  background-color: lightgray;
+}
+
+.plain_table > thead {
+  border-bottom: medium double; 
+}
+
+.left_header {
+  border-right: 2px solid;
+  background-color: white;
+}
+
+body {
+  font-family: sans-serif;
+}
+
+.halfwidth {
+  width: 50%;
+}
+
+/* Flexbox */
+.box {
+  border: 2px dotted rgb(96 139 168);
+  display: flex;
+  justify-content: start;
+}
+
+.flex_row { flex-direction: row; }
+.flex_col { flex-direction: column; }
+.flex_wrapping { flex-wrap: wrap; }
+
+/* Cells for flexbox and grid layouts */
+
+.box > *, .grid > *, .fixed_grid > * {
+  border: 2px solid rgb(96 139 168);
+  border-radius: 5px;
+  background-color: rgb(96 139 168 / 0.2);
+  padding: 5px;
+  margin: 5px;
+}
+
+
+.box > img, .grid > img, .fixed_grid > img {
+  align-self: center;
+  max-width: 200px;
+  max-height: 200px;
+}
+
+/* Grid */
+
+.grid, .fixed_grid {
+  display: grid; 
+  border: 2px dotted rgb(96 139 168);
+  justify-items: center;
+  grid-auto-flow: dense;
+}
+
+/* Responsive */
+.grid { 
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+
+/* Fixed, 4 equal columns */
+.fixed_grid {
+  grid-template-columns: repeat(4, 25%);
+}
+
+@media screen and (500px <= width) {
+  #earth {  /* Grows 2x in both directions */
+    min-width: 400px; /* Force growth beyond original size */
+    min-height: 400px;
+    grid-column: 1 / 3;
+    grid-row: 1 / 3;
+  }
+}
+#Hitchcock { /* triple-high */
+  max-height: 600px; 
+  min-width: 200px; /* Force growth beyond original size */
+  grid-row-start: 3;
+  grid-row-end: 6;
+  grid-column-start: 1;
+}
+
+#mouse { /* force overlap, double-wide */
+  grid-row-start: 4;
+  grid-column-start: 1;
+  grid-column-end: 3;
+  max-width: 400px;
+}
+
+#mole { /* double-wide */
+  max-width: 400px;
+  grid-column-start: 3;
+  grid-column-end: 5
+}
+
+/* media-type query: don't bother even trying to print a video */
+@media print {
+  .video {
+    display: none;
+  }
+}
+
+/* Media-properties query */
+@media screen and (700px <= width < 900px) {
+  .fixed_grid {
+    grid-template-columns: 33% 34% 33%;
+  }
+
+  #mole {
+    grid-column: 2 / 4;
+  }
+}
+
+@media screen and (500px < width < 700px) {
+  .fixed_grid {
+    grid-template-columns: repeat(2, 50%);
+  }
+
+  #mole {
+    grid-column: 1 / 3;
+  }
+}
+
+@media screen and (width <= 500px) {
+  .fixed_grid {
+    grid-template-columns: 100%;
+  }
+
+  #mouse {
+    grid-column: 1 / auto;
+  }
+  #mole {
+    grid-column: 1 / auto;
+  }
+}
+
+/* Header and footer, using Flexbox */
+
+html, body {
+  height: 100%; /* Can't grow without limit vertically */
+  margin: 0;
+}
+
+.page {
+  display: flex;
+  flex-direction: column;
+  height: 100%; /* Can't grow without limit vertically */
+}
+
+.content {
+  overflow: auto; /* When there's too much, use a scrollbar */
+}
+
+header, footer {
+  background-color: #49176D; /* Converse purple */
+  color: white;
+  flex: 0 0; /* Don't grow or shrink */
+}
+
+header > h1, footer > p {
+  margin: 0;          /* Use only the space required */
+  padding: 0;
+  text-align: center; /* Center horizontally */
+}
+
+.squares_table {
+  margin-left: 2em;
+}
